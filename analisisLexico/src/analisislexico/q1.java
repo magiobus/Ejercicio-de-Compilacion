@@ -1,5 +1,5 @@
 package analisislexico;
-
+/*by Fer*/
 public class q1 {
     public static void analisis(char cadena[],int indice){
         System.out.println("q1: indice ="+indice);
