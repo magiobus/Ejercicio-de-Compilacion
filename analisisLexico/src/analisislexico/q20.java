@@ -6,7 +6,7 @@ package analisislexico;
 
 /**
  *
- * @author Macbook
+ * @author Magio :)
  */
 public class q20 {
     public static void analisis(char cadena[],int indice){
