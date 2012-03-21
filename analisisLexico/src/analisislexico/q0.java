@@ -1,5 +1,9 @@
 package analisislexico;
-/*By Fer*/
+ /*                                 *| 
+ |*                                 *|
+ |*             By Wolf             *|
+ |*                                 *|
+ |*                                 */
 public class q0 {
     public static void analisis(char cadena[],int indice){
         System.out.println("q0: indice =" + indice);
