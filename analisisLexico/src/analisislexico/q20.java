@@ -19,20 +19,5 @@ public class q20 {
               System.out.println("fin programa");
               System.exit(0);
             }
-          
-        
-        
-        
-        
-        
-        
-        
-        
-        
   }
-    
-    
-    
-    
-    
 }
