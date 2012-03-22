@@ -7,7 +7,7 @@ package analisislexico;
  */
 public class q17 {
     public static void analisis(char cadena[],int indice){
-        System.out.println("q18: indice ="+indice);
+        System.out.println("q17: indice ="+indice);
  
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             /*retorno de componente lexico "igual a"*/    

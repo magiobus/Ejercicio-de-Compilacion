@@ -14,6 +14,7 @@ public class q20 {
 
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             indice++;
+            /*retorno de componente lexico*/
             q0.analisis(cadena, indice);
 
         } else { // Si esta en el ultimo caracter, termina el programa 

@@ -42,7 +42,7 @@ public class q0 {
                 case '<': q20.analisis(cadena,indice+1);break;
                 case '>': q14.analisis(cadena,indice+1);break;
                 case '=': q17.analisis(cadena,indice+1);break;
-                case ':': q17.analisis(cadena,indice+1);break;
+                case ':': q18.analisis(cadena,indice+1);break;
                 case '+': q20.analisis(cadena,indice+1);break;
                 case '-': q21.analisis(cadena,indice+1);break;
                 case '*': q22.analisis(cadena,indice+1);break;
