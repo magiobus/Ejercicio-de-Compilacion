@@ -12,14 +12,12 @@ public class q29 {
     public static void analisis(char cadena[],int indice){
         System.out.println("q29: indice ="+indice);     
         
-        if(indice-1 == cadena.length-1){ // ¬()si no hay nada 
-            System.out.println("ERROR ¬");
-            System.exit(0);
+        if(indice-1 == cadena.length-1){ // ¬()si no hay nada .
+            qe.analisis(cadena, indice);
         }
         
         if(cadena[indice] != '¬'){ // si es ¬(mas caracteres diferentes a ¬) error
-            System.out.println("ERROR ¬");
-            System.exit(0);
+            qe.analisis(cadena, indice);
         }
        
         while(indice < cadena.length-1){
@@ -37,6 +35,8 @@ public class q29 {
                 System.exit(0);
             }
         }
+        
+        
     }
 }
         
