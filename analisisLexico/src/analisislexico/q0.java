@@ -56,7 +56,7 @@ public class q0 {
                 case ',': q30.analisis(cadena,indice+1);break;
                 case '.': q32.analisis(cadena,indice+1);break;
             
-                default: qE; //si no coincide con nada mandara por default a un estado de error
+                default: qe.analisis(cadena, indice); //si no coincide con nada mandara por default a un estado de error
             }
         }
     
