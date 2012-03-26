@@ -8,7 +8,8 @@ package analisislexico;
  *
  * @author wolf
  */
-public class q30 {
+public class q32 {
+    
     public static void analisis(char cadena[],int indice){
         System.out.println("q30: indice ="+indice);
         
