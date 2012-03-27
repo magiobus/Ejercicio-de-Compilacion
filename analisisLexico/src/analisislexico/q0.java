@@ -1,22 +1,29 @@
 package analisislexico;
+
+import java.util.LinkedList;
+
  /*                                 *| 
  |*                                 *|
  |*             By Wolf             *|
  |*                                 *|
  |*                                 */
 public class q0 {
-    public static void analisis(char cadena[],int indice){
+    
+    String [] retornoLexico;
+    LinkedList retor = new LinkedList();
+    
+    public static void analisis(char cadena[],int indice,int indiceLex){
         System.out.println("q0: indice =" + indice);
         
         /*Si el caracter guardado que recibe es un enter, lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\n' && indice < cadena.length-1){
             indice = indice+1;
-            q0.analisis(cadena, indice);
+            q0.analisis(cadena, indice, indiceLex);
         }
         /*Si el caracter guardado que recibe es un "tab", lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\t' && indice < cadena.length-1){
             indice = indice+1;
-            q0.analisis(cadena, indice);
+            q0.analisis(cadena, indice, indiceLex);
         }
         
         /* Si esta posicionado en el ultimo caracter 
@@ -30,10 +37,10 @@ public class q0 {
         
         if(cadena[indice] == ' ' && indice < cadena.length-1){ 
             indice = indice+1;
-            q0.analisis(cadena, indice);
+            q0.analisis(cadena, indice,indiceLex);
         }
   /* Si el arreglo recibido en la posición actual tiene un caracter, se envia a q1 */
-        if(MapaDeCaracteres.isChar(cadena[indice])) q1.analisis(cadena, indice+1);
+        if(MapaDeCaracteres.isChar(cadena[indice])) q1.analisis(cadena, indice+1,indiceLex);
   /* Si el arreglo recibido en la posición actual tiene un digito/numero, se envia a q3 */
         else if(MapaDeCaracteres.isDigit(cadena[indice])) q3.analisis(cadena, indice+1);
   /* En caso de no coincidir con numeros o caracter revisa los siguientes */      
