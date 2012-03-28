@@ -1,6 +1,6 @@
 package analisislexico;
 
-import java.util.LinkedList;
+import analisislexico.MapaDeCaracteres;
 
  /*                                 *| 
  |*                                 *|
@@ -9,21 +9,18 @@ import java.util.LinkedList;
  |*                                 */
 public class q0 {
     
-    String [] retornoLexico;
-    LinkedList retor = new LinkedList();
-    
-    public static void analisis(char cadena[],int indice,int indiceLex){
+    public static void analisis(char cadena[],int indice){
         System.out.println("q0: indice =" + indice);
         
         /*Si el caracter guardado que recibe es un enter, lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\n' && indice < cadena.length-1){
             indice = indice+1;
-            q0.analisis(cadena, indice, indiceLex);
+            q0.analisis(cadena, indice);
         }
         /*Si el caracter guardado que recibe es un "tab", lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\t' && indice < cadena.length-1){
             indice = indice+1;
-            q0.analisis(cadena, indice, indiceLex);
+            q0.analisis(cadena, indice);
         }
         
         /* Si esta posicionado en el ultimo caracter 
@@ -37,15 +34,18 @@ public class q0 {
         
         if(cadena[indice] == ' ' && indice < cadena.length-1){ 
             indice = indice+1;
-            q0.analisis(cadena, indice,indiceLex);
+            q0.analisis(cadena, indice);
         }
   /* Si el arreglo recibido en la posición actual tiene un caracter, se envia a q1 */
-        if(MapaDeCaracteres.isChar(cadena[indice])) q1.analisis(cadena, indice+1,indiceLex);
+        if(MapaDeCaracteres.isChar(cadena[indice])){
+            q1.analisis(cadena, indice+1);
+        }
   /* Si el arreglo recibido en la posición actual tiene un digito/numero, se envia a q3 */
         else if(MapaDeCaracteres.isDigit(cadena[indice])) q3.analisis(cadena, indice+1);
   /* En caso de no coincidir con numeros o caracter revisa los siguientes */      
         else{
             switch(cadena[indice]){
+                
                 case '<': q20.analisis(cadena,indice+1);break;
                 case '>': q14.analisis(cadena,indice+1);break;
                 case '=': q17.analisis(cadena,indice+1);break;

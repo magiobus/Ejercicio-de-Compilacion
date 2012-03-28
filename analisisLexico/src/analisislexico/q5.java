@@ -4,6 +4,8 @@
  */
 package analisislexico;
 
+import analisislexico.MapaDeCaracteres;
+
 /**
  *
  * @author Gama-Sennin
