@@ -10,12 +10,16 @@
  */
 package analisislexico;
 
+import General.TablaDeSimbolos;
+
 /**
  *
  * @author wolf
  */
 public class prueba extends javax.swing.JFrame {
 
+    TablaDeSimbolos tablaDSimbolos;
+    
     public prueba() {
         initComponents();
     }

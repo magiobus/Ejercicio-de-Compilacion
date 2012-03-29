@@ -4,6 +4,8 @@
  */
 package analisislexico;
 
+import General.TablaDeSimbolos;
+
 /**
  *
  * @author wolf

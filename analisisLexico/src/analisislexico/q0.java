@@ -1,6 +1,6 @@
 package analisislexico;
 
-import analisislexico.MapaDeCaracteres;
+import General.TablaDeSimbolos;
 
  /*                                 *| 
  |*                                 *|
@@ -38,10 +38,14 @@ public class q0 {
         }
   /* Si el arreglo recibido en la posición actual tiene un caracter, se envia a q1 */
         if(MapaDeCaracteres.isChar(cadena[indice])){
+            TablaDeSimbolos.inicioLexema=indice;
             q1.analisis(cadena, indice+1);
         }
   /* Si el arreglo recibido en la posición actual tiene un digito/numero, se envia a q3 */
-        else if(MapaDeCaracteres.isDigit(cadena[indice])) q3.analisis(cadena, indice+1);
+        else if(MapaDeCaracteres.isDigit(cadena[indice])){ 
+            TablaDeSimbolos.inicioLexema=indice;
+            q3.analisis(cadena, indice+1);
+        }
   /* En caso de no coincidir con numeros o caracter revisa los siguientes */      
         else{
             switch(cadena[indice]){
