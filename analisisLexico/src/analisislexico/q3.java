@@ -29,6 +29,15 @@ public class q3 {
                     qe.analisis(cadena, indice);
                 }
                 else if(cadena[indice] == ' '){ //si el caracter es un espacio en blanco
+                    
+                    for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
+                        valorLexema=valorLexema+cadena[c];
+                    }
+
+                    lex.setValor(valorLexema); //coloca el valor en el lexema
+                    TablaDeSimbolos.tablaHash.put("numero"+TablaDeSimbolos.contadorIds,lex); //agrega el lexema a la tabla
+                    System.out.println("agregado identificador numero "+TablaDeSimbolos.contadorIds); 
+                    TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
                     q0.analisis(cadena, indice);
                 }
             }       
@@ -39,12 +48,11 @@ public class q3 {
             }
             
             lex.setValor(valorLexema); //coloca el valor en el lexema
-            TablaDeSimbolos.tablaHash.put("identificador"+TablaDeSimbolos.contadorIds,lex); //agrega el lexema a la tabla
+            TablaDeSimbolos.tablaHash.put("numero"+TablaDeSimbolos.contadorIds,lex); //agrega el lexema a la tabla
             System.out.println("agregado identificador numero "+TablaDeSimbolos.contadorIds); 
             TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
             System.out.println("fin programa"); //mensaje de que el programa terminara
             System.out.println(TablaDeSimbolos.tablaHash.toString()); //imprime la tabla de simbolos
-            System.out.println("fin programa");
             System.exit(0);
         }
 
