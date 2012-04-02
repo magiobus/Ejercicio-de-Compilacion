@@ -1,7 +1,5 @@
 package analisislexico;
 
-import General.TablaDeSimbolos;
-
 public class MapaDeCaracteres {
     
     static int i;

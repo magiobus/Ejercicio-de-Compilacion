@@ -4,13 +4,16 @@
  */
 package analisislexico;
 
-import General.TablaDeSimbolos;
+import General.prueba;
 
 /**
  *
  * @author wolf
  */
-public class AnalisisLexico {    
+public class AnalisisLexico {
+    
+    public static String resultadoAnalisis=""; //variable para guardar el resultado del analisis
+    
     public static void main(String[] args) {
         new prueba().setVisible(true);
     }

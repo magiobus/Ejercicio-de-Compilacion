@@ -13,7 +13,7 @@ public class q3 {
     public static void analisis(char cadena[],int indice){
     
         String valorLexema="";
-        Lexema lex = new Lexema(null, null);
+        Lexema lex = new Lexema(null,null, null);
     
         if(indice < cadena.length){ // Revisa si no esta en el ultimo caracter 
             if(MapaDeCaracteres.isDigit(cadena[indice])){   //analisis recursivo del numero mientras este sea solo digitos
@@ -55,7 +55,6 @@ public class q3 {
             System.out.println(TablaDeSimbolos.tablaHash.toString()); //imprime la tabla de simbolos
             System.exit(0);
         }
-
     }
     
 }

@@ -10,8 +10,7 @@ import General.TablaDeSimbolos;
 public class q0 {
     
     public static void analisis(char cadena[],int indice){
-        System.out.println("q0: indice =" + indice);
-        
+
         /*Si el caracter guardado que recibe es un enter, lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\n' && indice < cadena.length-1){
             indice = indice+1;
@@ -66,6 +65,7 @@ public class q0 {
                 case '¬': q29.analisis(cadena,indice+1);break;
                 case ',': q30.analisis(cadena,indice+1);break;
                 case '.': q32.analisis(cadena,indice+1);break;
+                case '"': q33.analisis(cadena,indice+1);break;
             
                 default: qe.analisis(cadena, indice); //si no coincide con nada mandara por default a un estado de error
             }
