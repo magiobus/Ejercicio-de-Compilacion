@@ -10,7 +10,6 @@ import General.TablaDeSimbolos;
 public class q0 {
     
     public static void analisis(char cadena[],int indice){
-
         /*Si el caracter guardado que recibe es un enter, lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\n' && indice < cadena.length-1){
             indice = indice+1;
@@ -21,7 +20,7 @@ public class q0 {
             indice = indice+1;
             q0.analisis(cadena, indice);
         }
-        
+
         /* Si esta posicionado en el ultimo caracter 
          * y este es un espacio un tab o una linea nueva
          * termina el analisis*/
@@ -30,7 +29,7 @@ public class q0 {
             System.out.println("Fin");
             System.exit(0);
         }
-        
+
         if(cadena[indice] == ' ' && indice < cadena.length-1){ 
             indice = indice+1;
             q0.analisis(cadena, indice);
@@ -48,7 +47,7 @@ public class q0 {
   /* En caso de no coincidir con numeros o caracter revisa los siguientes */      
         else{
             switch(cadena[indice]){
-                
+
                 case '<': q20.analisis(cadena,indice+1);break;
                 case '>': q14.analisis(cadena,indice+1);break;
                 case '=': q17.analisis(cadena,indice+1);break;
@@ -66,10 +65,9 @@ public class q0 {
                 case ',': q30.analisis(cadena,indice+1);break;
                 case '.': q32.analisis(cadena,indice+1);break;
                 case '"': q33.analisis(cadena,indice+1);break;
-            
+
                 default: qe.analisis(cadena, indice); //si no coincide con nada mandara por default a un estado de error
             }
         }
-    
     }
 }

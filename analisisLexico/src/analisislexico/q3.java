@@ -13,8 +13,7 @@ public class q3 {
     public static void analisis(char cadena[],int indice){
     
         String valorLexema="";
-        Lexema lex = new Lexema(null,null, null);
-    
+        
         if(indice < cadena.length){ // Revisa si no esta en el ultimo caracter 
             if(MapaDeCaracteres.isDigit(cadena[indice])){   //analisis recursivo del numero mientras este sea solo digitos
                 System.out.println("q3: indice =" + indice ); 
@@ -29,15 +28,10 @@ public class q3 {
                     qe.analisis(cadena, indice);
                 }
                 else if(cadena[indice] == ' '){ //si el caracter es un espacio en blanco
-                    
                     for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                         valorLexema=valorLexema+cadena[c];
                     }
-
-                    lex.setValor(valorLexema); //coloca el valor en el lexema
-                    TablaDeSimbolos.tablaHash.put("numero"+TablaDeSimbolos.contadorIds,lex); //agrega el lexema a la tabla
-                    System.out.println("agregado identificador numero "+TablaDeSimbolos.contadorIds); 
-                    TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
+                    AnalisisLexico.resultadoAnalisis+="<num,"+valorLexema+">";
                     q0.analisis(cadena, indice);
                 }
             }       
@@ -47,14 +41,10 @@ public class q3 {
                 valorLexema=valorLexema+cadena[c];
             }
             
-            lex.setValor(valorLexema); //coloca el valor en el lexema
-            TablaDeSimbolos.tablaHash.put("numero"+TablaDeSimbolos.contadorIds,lex); //agrega el lexema a la tabla
-            System.out.println("agregado identificador numero "+TablaDeSimbolos.contadorIds); 
-            TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
+            AnalisisLexico.resultadoAnalisis+="<num,"+valorLexema+">";
             System.out.println("fin programa"); //mensaje de que el programa terminara
-            System.out.println(TablaDeSimbolos.tablaHash.toString()); //imprime la tabla de simbolos
+            System.out.println(AnalisisLexico.resultadoAnalisis); //imprime la tabla de simbolos
             System.exit(0);
         }
     }
-    
 }

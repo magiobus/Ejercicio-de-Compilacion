@@ -14,7 +14,7 @@ public class q1 {
         Lexema lex = new Lexema(null,null, null);
         
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
-                /* Mientras el caracter del arreglo en posición i sea un digito o un caracter los procesara recursivamente*/
+                /* Mientras el caracter del arreglo en posición "indice" sea un digito o un caracter los procesara recursivamente*/
             if(MapaDeCaracteres.isChar(cadena[indice]) || MapaDeCaracteres.isDigit(cadena[indice])){
                 q1.analisis(cadena, indice+1);
             }
@@ -28,8 +28,8 @@ public class q1 {
                 if(!TablaDeSimbolos.tablaHash.containsKey(valorLexema)){ // revisamos si no esta el identificador en la tabla
                   
                     lex.setCompLex("id"+TablaDeSimbolos.contadorIds); // Se le asigna un componente lexico
-                    TablaDeSimbolos.tablaHash.put(valorLexema,lex); //agrega el lexema a la tabla
                     TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
+                    TablaDeSimbolos.tablaHash.put(valorLexema,lex); //agrega el lexema a la tabla
                     
                     AnalisisLexico.resultadoAnalisis+="<"+lex.getCompLex()+">"; //Se añade al resultado del analisis
                     
@@ -43,13 +43,14 @@ public class q1 {
         }    
         
         else { // Si esta en el ultimo caracter, termina el programa
-            if(cadena[indice]){
-            
+            try{ //si esta sobre el ultimo caracter y este es parte del identificador terminara de procesarlo
+                if(MapaDeCaracteres.isChar(cadena[indice]) || MapaDeCaracteres.isDigit(cadena[indice])){
+                    indice++;
+                }
             }
-            else{
-            for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
+            catch(Exception ex){} //si el caracter es vacio provocara un error de ArrayOutOfBounds, el cual ignoraremos
+            for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                 valorLexema=valorLexema+cadena[c];
-            }
             }
             
             System.out.println("valor lexema:|"+valorLexema+"|");
@@ -61,15 +62,11 @@ public class q1 {
                 TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
                 AnalisisLexico.resultadoAnalisis+="<"+lex.getCompLex()+">"; //Se añade al resultado del analisis
                 
-                System.out.println(AnalisisLexico.resultadoAnalisis);
-                System.out.println("fin programa"); //mensaje de que el programa terminara
-                System.out.println(TablaDeSimbolos.tablaHash.toString()); //imprime la tabla de simbolos
                 System.out.println(AnalisisLexico.resultadoAnalisis); //imprime el resultado del analisis
                 System.exit(0); //fin programa
             }
             else{
                 AnalisisLexico.resultadoAnalisis+="<"+TablaDeSimbolos.tablaHash.get(valorLexema).getCompLex()+">";// se añade su componente
-                System.out.println(TablaDeSimbolos.tablaHash.toString()); //imprime la tabla de simbolo
                 System.out.println(AnalisisLexico.resultadoAnalisis); //imprime el resultado del analisis
                 System.exit(0);
             }
