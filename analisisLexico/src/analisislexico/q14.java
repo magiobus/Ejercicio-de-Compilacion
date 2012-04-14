@@ -14,19 +14,19 @@ public class q14 {
         
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             if(cadena[indice]=='='){
-                /*Retorno de componente lexico "menor o igual"*/
+                AnalisisLexico.resultadoAnalisis+="<>=>"; //Se añade al resultado del analisis
                 q0.analisis(cadena,indice+1);
             }
             else{
                 if(MapaDeCaracteres.isValid(cadena[indice])){
-                    /*Retorno de componente lexico "comparacion de igualdad"*/
+                    AnalisisLexico.resultadoAnalisis+="<>>"; //Se añade al resultado del analisis
                     q0.analisis(cadena,indice+1);
                 }
             }
         }
         else { // Si esta en el ultimo caracter, termina el programa 
-            System.out.println("fin programa");
-            System.exit(0);
+            AnalisisLexico.resultadoAnalisis+="<>>"; //Se añade al resultado del analisis
+            qf.end();
         }        
     }
 }

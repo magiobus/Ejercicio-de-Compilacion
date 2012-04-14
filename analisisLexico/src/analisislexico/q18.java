@@ -10,7 +10,7 @@ public class q18 {
         
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             if(cadena[indice]=='='){
-                /*retorno de componente lexico "asignacion"*/
+                AnalisisLexico.resultadoAnalisis+="<:=>"; //Se añade al resultado del analisis
                 q0.analisis(cadena, indice+1);
             }
             else {
@@ -19,7 +19,7 @@ public class q18 {
         }
        
         else{ 
-                qe.analisis(cadena, indice);
+                qf.end();
         }
     }
 }

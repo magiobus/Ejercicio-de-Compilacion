@@ -62,13 +62,12 @@ public class q1 {
                 TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
                 AnalisisLexico.resultadoAnalisis+="<"+lex.getCompLex()+">"; //Se añade al resultado del analisis
                 
-                System.out.println(AnalisisLexico.resultadoAnalisis); //imprime el resultado del analisis
-                System.exit(0); //fin programa
+                qf.end();
             }
             else{
                 AnalisisLexico.resultadoAnalisis+="<"+TablaDeSimbolos.tablaHash.get(valorLexema).getCompLex()+">";// se añade su componente
-                System.out.println(AnalisisLexico.resultadoAnalisis); //imprime el resultado del analisis
-                System.exit(0);
+                
+                qf.end();
             }
         }
     }

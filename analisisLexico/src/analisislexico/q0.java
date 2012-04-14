@@ -26,8 +26,7 @@ public class q0 {
          * termina el analisis*/
         if((cadena[indice] == ' '||cadena[indice] == '\t'||cadena[indice] == '\n') 
                 && indice == cadena.length-1 ){
-            System.out.println("Fin");
-            System.exit(0);
+            qf.end();
         }
 
         if(cadena[indice] == ' ' && indice < cadena.length-1){ 
@@ -64,7 +63,10 @@ public class q0 {
                 case '¬': q29.analisis(cadena,indice+1);break;
                 case ',': q30.analisis(cadena,indice+1);break;
                 case '.': q32.analisis(cadena,indice+1);break;
-                case '"': q33.analisis(cadena,indice+1);break;
+                case '"': {
+                            TablaDeSimbolos.inicioLexema=indice;
+                            q33.analisis(cadena,indice+1);
+                            }break;
 
                 default: qe.analisis(cadena, indice); //si no coincide con nada mandara por default a un estado de error
             }

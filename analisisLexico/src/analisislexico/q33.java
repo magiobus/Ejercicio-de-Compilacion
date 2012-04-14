@@ -4,6 +4,8 @@
  */
 package analisislexico;
 
+import General.TablaDeSimbolos;
+
 /**
  *
  * @author wolf
@@ -11,15 +13,22 @@ package analisislexico;
 public class q33 {
     public static void analisis(char cadena[],int indice){
         System.out.println("q26: indice ="+indice);
-
+        String valorLexema="";
+        
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
-            indice++;
-            q0.analisis(cadena, indice);
-
+            while(MapaDeCaracteres.isValid(cadena[indice])){
+                indice++;
+                if(cadena[indice]=='"'){
+                    for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
+                        valorLexema=valorLexema+cadena[c];
+                    }
+                    AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
+                    q0.analisis(cadena, indice);
+                }
+            }
         } 
         else { // Si esta en el ultimo caracter, termina el programa 
-            System.out.println("fin programa");
-            System.exit(0);
+            qf.end();
         }
     }
 }

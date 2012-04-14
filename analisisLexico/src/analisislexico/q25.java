@@ -14,12 +14,13 @@ public class q25 {
 
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             indice++;
+            AnalisisLexico.resultadoAnalisis+="<(>"; // se añade al resultado del analisis
             q0.analisis(cadena, indice);
 
         } else { // Si esta en el ultimo caracter, termina el programa 
-            System.out.println("fin programa");
-            System.exit(0);
-          }
+            AnalisisLexico.resultadoAnalisis+="<(>"; // se añade al resultado del analisis
+            qf.end();
+        }
     }
     
 }

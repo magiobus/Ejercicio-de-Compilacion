@@ -14,9 +14,11 @@ public class qe {// NO terminado
                 error = error+cadena[i]; // Se concatena la cadena hasta donde se a leido
             }
             System.err.println("Error lexico cerca de '"+error+"'");
+            q0.analisis(cadena, indice+1);
         }
         else{
             System.err.println("Error lexico cerca del inicio");
+            q0.analisis(cadena, indice+1);
         }
     }
 }

@@ -4,7 +4,6 @@
  */
 package analisislexico;
 import General.TablaDeSimbolos;
-import General.Lexema;
 /**
  *
  * @author Gama-Sennin
