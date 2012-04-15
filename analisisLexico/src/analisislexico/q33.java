@@ -19,9 +19,9 @@ public class q33 {
             if(cadena[indice]=='"'){
                 for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                         valorLexema=valorLexema+cadena[c];
-                    }
-                    AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
-                    q0.analisis(cadena, indice);
+                }
+                AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
+                q0.analisis(cadena, indice+1);
             }
             else if(MapaDeCaracteres.isValid(cadena[indice])){
                 q33.analisis(cadena, indice+1);
