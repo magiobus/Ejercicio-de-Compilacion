@@ -6,16 +6,15 @@ package analisislexico;
 
 /**
  *
- * @author wolf
+ * @author wolf reviewing
  */
 public class q30 {
     public static void analisis(char cadena[],int indice){
         System.out.println("q30: indice ="+indice);
         
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
-            indice++;
             AnalisisLexico.resultadoAnalisis+="<,>";
-            q0.analisis(cadena,indice);
+            q0.analisis(cadena,indice+1);
         }
         else { // Si esta en el ultimo caracter, termina el programa 
             AnalisisLexico.resultadoAnalisis+="<,>";

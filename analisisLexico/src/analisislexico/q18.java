@@ -2,7 +2,7 @@ package analisislexico;
 
 /**
  *
- * @author wolf
+ * @author wolf 
  */
 public class q18 {
     public static void analisis(char cadena[],int indice){
@@ -14,12 +14,22 @@ public class q18 {
                 q0.analisis(cadena, indice+1);
             }
             else {
-                qe.analisis(cadena, indice); //Si es el ":" es ultimo caracter es un error
+                qe.analisis(cadena, indice); //Si despues del ":" no hay un "=" es un error lexico
             }
         }
        
-        else{ 
-                qf.end();
+        else{ //si estas sobre el ultimo caracter
+                try{ //intenta leer el ultimo caracter
+                    if(cadena[indice]=='='){ //si el ultimo caracter es un =
+                        AnalisisLexico.resultadoAnalisis+="<:=>"; //Se añade al resultado del analisis
+                        qf.end();
+                    }
+                    else qe.analisis(cadena, indice);
+                } //si no se puede leer el caracter es porque no existe
+                catch(Exception ex){
+                    qe.analisis(cadena, indice);
+                    
+                }
         }
     }
 }

@@ -10,6 +10,7 @@ import General.TablaDeSimbolos;
 public class q0 {
     
     public static void analisis(char cadena[],int indice){
+        System.out.println("q0");
         /*Si el caracter guardado que recibe es un enter, lo ignora y pasa al siguiente caracter*/
         if(cadena[indice] == '\n' && indice < cadena.length-1){
             indice = indice+1;

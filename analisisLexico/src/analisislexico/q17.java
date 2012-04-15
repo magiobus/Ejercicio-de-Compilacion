@@ -3,7 +3,7 @@ package analisislexico;
 
 /**
  *
- * @author wolf
+ * @author wolf ~Final version~
  */
 public class q17 {
     public static void analisis(char cadena[],int indice){
@@ -11,12 +11,22 @@ public class q17 {
  
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             AnalisisLexico.resultadoAnalisis+="<=>"; //Se añade al resultado del analisis    
-            q0.analisis(cadena,indice+1);    
+            q0.analisis(cadena,indice);    
         }
         
         else { // Si esta en el ultimo caracter, termina el programa 
-            AnalisisLexico.resultadoAnalisis+="<=>"; //Se añade al resultado del analisis
-            qf.end();
+            try{
+                if(cadena[indice]=='='){
+                    AnalisisLexico.resultadoAnalisis+="<=>"; //Se añade al resultado del analisis
+                    q0.analisis(cadena, indice);
+                }
+            }
+            catch(Exception ex){
+                AnalisisLexico.resultadoAnalisis+="<=>"; //Se añade al resultado del analisis
+                qf.end();
+            }
+            
+                
         }        
     }
 }

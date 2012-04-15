@@ -6,7 +6,7 @@ package analisislexico;
 
 /**
  *
- * @author wolf
+ * @author wolf reviewing
  */
 public class q32 {
     

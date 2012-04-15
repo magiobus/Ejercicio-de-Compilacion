@@ -5,7 +5,7 @@ import General.TablaDeSimbolos;
  /*                                 *| 
  |*                                 *|
  |*             By Wolf             *|
- |*                                 *|
+ |*           Final version         *|
  |*                                 */
 
 public class q1 {

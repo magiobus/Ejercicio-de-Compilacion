@@ -23,19 +23,24 @@ public class q33 {
                 AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
                 q0.analisis(cadena, indice+1);
             }
-            else if(MapaDeCaracteres.isValid(cadena[indice])){
+            else if(MapaDeCaracteres.isValid(cadena[indice])||cadena[indice]==' '||cadena[indice] == '\t'||cadena[indice] == '\n'){
                 q33.analisis(cadena, indice+1);
             }
                 
         } 
         else { // Si esta en el ultimo caracter, termina el programa
-            if(cadena[indice]=='"'){
-                for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
-                            valorLexema=valorLexema+cadena[c];
+            try{ //se intenta leer el ultimo caracter
+                if(cadena[indice]=='"'){
+                    for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
+                                valorLexema=valorLexema+cadena[c];
+                    }
+                    AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
                 }
-                AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
+                qf.end();
             }
-            qf.end();
+            catch(Exception ex){
+                qf.end();
+            } // si el ultimo caracter no existe generara un error que ignoraremos y finaliza el programa
         }
     }
 }
