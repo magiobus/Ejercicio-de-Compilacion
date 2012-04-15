@@ -29,15 +29,15 @@ public class q29 {
             if (cadena[indice] == '¬') { // si es ¬(¬) y hay mas caracteres
                 System.out.println("¬¬...");
                 indice++;
+                AnalisisLexico.resultadoAnalisis+="<¬¬>";
                 q0.analisis(cadena, indice);
             }
         }
 
         while (indice == cadena.length - 1 && estado == false) {
             if (cadena[indice] == '¬') { // Si es ¬(¬) y no hay mas caracteres
-                System.out.println("¬¬ Fin");
-                System.out.println("fin de programa");
-                System.exit(0);
+                AnalisisLexico.resultadoAnalisis+="<¬¬>";
+                qf.end();
             }
         }
     }
