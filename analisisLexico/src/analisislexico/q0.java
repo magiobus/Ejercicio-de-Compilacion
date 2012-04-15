@@ -63,10 +63,8 @@ public class q0 {
                 case '¬': q29.analisis(cadena,indice+1);break;
                 case ',': q30.analisis(cadena,indice+1);break;
                 case '.': q32.analisis(cadena,indice+1);break;
-                case '"': {
-                            TablaDeSimbolos.inicioLexema=indice;
-                            q33.analisis(cadena,indice+1);
-                            }break;
+                case '"': TablaDeSimbolos.inicioLexema=indice;
+                          q33.analisis(cadena,indice+1);break;
 
                 default: qe.analisis(cadena, indice); //si no coincide con nada mandara por default a un estado de error
             }

@@ -23,8 +23,6 @@ public class q1 {
                     valorLexema=valorLexema+cadena[c];
                 }
                 
-                System.out.println("valor lexema:|"+valorLexema+"|");
-                
                 if(!TablaDeSimbolos.tablaHash.containsKey(valorLexema)){ // revisamos si no esta el identificador en la tabla
                   
                     lex.setCompLex("id"+TablaDeSimbolos.contadorIds); // Se le asigna un componente lexico
@@ -47,13 +45,27 @@ public class q1 {
                 if(MapaDeCaracteres.isChar(cadena[indice]) || MapaDeCaracteres.isDigit(cadena[indice])){
                     indice++;
                 }
+                else {
+                    for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
+                        valorLexema=valorLexema+cadena[c];
+                    }
+            
+                    if(!TablaDeSimbolos.tablaHash.containsKey(valorLexema)){    // revisamos si no esta el identificador en la tabla
+                        lex.setCompLex("id"+TablaDeSimbolos.contadorIds); //le asigna un componente lexico
+                        TablaDeSimbolos.tablaHash.put(valorLexema,lex); //agrega el lexema a la tabla
+                        TablaDeSimbolos.contadorIds=TablaDeSimbolos.contadorIds+1; //incrementa el contador de identificadores
+                        AnalisisLexico.resultadoAnalisis+="<"+lex.getCompLex()+">"; //Se añade al resultado del analisis
+                    }
+                    else{
+                        AnalisisLexico.resultadoAnalisis+="<"+TablaDeSimbolos.tablaHash.get(valorLexema).getCompLex()+">";// se añade su componente 
+                    }
+                    q0.analisis(cadena, indice);
+                }
             }
             catch(Exception ex){} //si el caracter es vacio provocara un error de ArrayOutOfBounds, el cual ignoraremos
             for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                 valorLexema=valorLexema+cadena[c];
             }
-            
-            System.out.println("valor lexema:|"+valorLexema+"|");
             
             if(!TablaDeSimbolos.tablaHash.containsKey(valorLexema)){    // revisamos si no esta el identificador en la tabla
                 
@@ -65,8 +77,7 @@ public class q1 {
                 qf.end();
             }
             else{
-                AnalisisLexico.resultadoAnalisis+="<"+TablaDeSimbolos.tablaHash.get(valorLexema).getCompLex()+">";// se añade su componente
-                
+                AnalisisLexico.resultadoAnalisis+="<"+TablaDeSimbolos.tablaHash.get(valorLexema).getCompLex()+">";// se añade su componente 
                 qf.end();
             }
         }
