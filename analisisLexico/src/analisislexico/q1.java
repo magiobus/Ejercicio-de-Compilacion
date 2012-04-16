@@ -1,7 +1,7 @@
 package analisislexico;
 
-import General.Lexema;
-import General.TablaDeSimbolos;
+import AnalisisGeneral.Lexema;
+import AnalisisGeneral.TablaDeSimbolos;
  /*                                 *| 
  |*                                 *|
  |*             By Wolf             *|

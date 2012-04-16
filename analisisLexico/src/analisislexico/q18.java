@@ -24,11 +24,12 @@ public class q18 {
                         AnalisisLexico.resultadoAnalisis+="<:=>"; //Se añade al resultado del analisis
                         qf.end();
                     }
-                    else qe.analisis(cadena, indice);
+                    else{
+                        qe.analisis(cadena, indice);
+                    }
                 } //si no se puede leer el caracter es porque no existe
                 catch(Exception ex){
                     qe.analisis(cadena, indice);
-                    
                 }
         }
     }

@@ -1,6 +1,6 @@
 package analisislexico;
 
-import General.TablaDeSimbolos;
+import AnalisisGeneral.TablaDeSimbolos;
 
  /*                                 *| 
  |*                                 *|
@@ -48,7 +48,7 @@ public class q0 {
         else{
             switch(cadena[indice]){
 
-                case '<': q20.analisis(cadena,indice+1);break;
+                case '<': q10.analisis(cadena,indice+1);break;
                 case '>': q14.analisis(cadena,indice+1);break;
                 case '=': q17.analisis(cadena,indice+1);break;
                 case ':': q18.analisis(cadena,indice+1);break;

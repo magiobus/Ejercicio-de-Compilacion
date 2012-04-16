@@ -16,7 +16,7 @@ public class q17 {
         
         else { // Si esta en el ultimo caracter, termina el programa 
             try{
-                if(cadena[indice]=='='){
+                if(MapaDeCaracteres.isValid(cadena[indice])){ 
                     AnalisisLexico.resultadoAnalisis+="<=>"; //Se añade al resultado del analisis
                     q0.analisis(cadena, indice);
                 }

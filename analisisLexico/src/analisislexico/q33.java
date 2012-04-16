@@ -4,11 +4,11 @@
  */
 package analisislexico;
 
-import General.TablaDeSimbolos;
+import AnalisisGeneral.TablaDeSimbolos;
 
 /**
  *
- * @author wolf
+ * @author wolf NOT FINISHED
  */
 public class q33 {
     public static void analisis(char cadena[],int indice){
@@ -34,9 +34,12 @@ public class q33 {
                     for(int c = TablaDeSimbolos.inicioLexema; c<indice+1;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                                 valorLexema=valorLexema+cadena[c];
                     }
-                    AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">";
+                    AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">"; //se añade al resultado del analisis
+                    qf.end();
                 }
-                qf.end();
+                else if(MapaDeCaracteres.isValid(cadena[indice])){
+                    //¿Qué hago si al final de una cadena no hay comillas?
+                }
             }
             catch(Exception ex){
                 qf.end();

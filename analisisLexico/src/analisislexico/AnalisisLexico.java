@@ -4,7 +4,7 @@
  */
 package analisislexico;
 
-import General.prueba;
+import AnalisisGeneral.prueba;
 
 /**
  *

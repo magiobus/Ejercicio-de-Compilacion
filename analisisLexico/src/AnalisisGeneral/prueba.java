@@ -8,9 +8,9 @@
  *
  * Created on Mar 9, 2012, 10:16:07 AM
  */
-package analisislexico;
+package AnalisisGeneral;
 
-import General.TablaDeSimbolos;
+import analisislexico.q0;
 
 /**
  *

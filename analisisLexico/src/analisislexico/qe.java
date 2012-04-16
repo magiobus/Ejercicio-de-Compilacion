@@ -3,7 +3,7 @@ package analisislexico;
 /*                                  *|
  |*                                 *|
  |*             By Wolf             *|
- |*                                 *|
+ |*         Final version           *|
  |*                                 */
 
 public class qe {
@@ -22,7 +22,7 @@ public class qe {
                 q0.analisis(cadena, indice);
             }
         }
-        else{
+        else{   //Si esta en el ultimo caracter
             if(indice>5){// controla que el mensaje solo se muestre si el indice se a movido almenos 5 veces
                 for(int i= indice-5;i<indice;i++){
                     error = error+cadena[i]; // Se concatena la cadena hasta donde se a leido

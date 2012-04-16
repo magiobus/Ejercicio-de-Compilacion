@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package analisislexico;
-import General.TablaDeSimbolos;
+import AnalisisGeneral.TablaDeSimbolos;
 /**
  *
  * @author Gama-Sennin

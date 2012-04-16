@@ -6,20 +6,26 @@ package analisislexico;
 
 /**
  *
- * @author wolf reviewing
+ * @author wolf ~Final version~
  */
 public class q32 {
-    
     public static void analisis(char cadena[],int indice){
         System.out.println("q32: indice ="+indice);
-        
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
-            AnalisisLexico.resultadoAnalisis+="<.>";
+            AnalisisLexico.resultadoAnalisis+="<.>"; //Se añade al resultado del analisis
             q0.analisis(cadena, indice);
-        }
+        } 
         else { // Si esta en el ultimo caracter, termina el programa 
-            AnalisisLexico.resultadoAnalisis+="<.>";
-            qf.end();
+            try{
+                if(MapaDeCaracteres.isValid(cadena[indice])){
+                    AnalisisLexico.resultadoAnalisis+="<.>"; //Se añade al resultado del analisis
+                    q0.analisis(cadena, indice);
+                }
+            }
+            catch(Exception ex){
+                AnalisisLexico.resultadoAnalisis+="<.>"; //Se añade al resultado del analisis
+                qf.end();
+            }
         }
     }
 }
