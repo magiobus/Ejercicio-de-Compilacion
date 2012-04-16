@@ -15,7 +15,12 @@ public class q1 {
         
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
                 /* Mientras el caracter del arreglo en posición "indice" sea un digito o un caracter los procesara recursivamente*/
-            if(MapaDeCaracteres.isChar(cadena[indice]) || MapaDeCaracteres.isDigit(cadena[indice])){
+                /*si el caracter procesado no es valido*/
+            if(!MapaDeCaracteres.isValid(cadena[indice])&&!(cadena[indice] == ' '||cadena[indice] == '\t'||cadena[indice] == '\n')){ 
+                System.err.println(cadena[indice]);
+                qe.analisis(cadena, indice);
+            }
+            else if(MapaDeCaracteres.isChar(cadena[indice]) || MapaDeCaracteres.isDigit(cadena[indice])){
                 q1.analisis(cadena, indice+1);
             }
             else{   //al terminar de procesar la cadena
