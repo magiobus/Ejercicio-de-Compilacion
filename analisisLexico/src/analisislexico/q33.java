@@ -26,7 +26,7 @@ public class q33 {
             else if(MapaDeCaracteres.isValid(cadena[indice])||cadena[indice]==' '||cadena[indice] == '\t'||cadena[indice] == '\n'){
                 q33.analisis(cadena, indice+1);
             }
-                
+            else qe.analisis(cadena, indice); //si no coincide con el lenguaje
         } 
         else { // Si esta en el ultimo caracter, termina el programa
             try{ //se intenta leer el ultimo caracter
@@ -37,8 +37,8 @@ public class q33 {
                     AnalisisLexico.resultadoAnalisis+="<cadena,"+valorLexema+">"; //se añade al resultado del analisis
                     qf.end();
                 }
-                else if(MapaDeCaracteres.isValid(cadena[indice])){
-                    //¿Qué hago si al final de una cadena no hay comillas?
+                else{
+                    qe.analisis(cadena, indice);
                 }
             }
             catch(Exception ex){

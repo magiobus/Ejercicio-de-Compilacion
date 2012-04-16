@@ -13,6 +13,12 @@ public class q3 {
     
         String valorLexema="";
         
+            /*si el caracter procesado no es valido*/
+        if(!MapaDeCaracteres.isValid(cadena[indice])&&!(cadena[indice] == ' '||cadena[indice] == '\t'||cadena[indice] == '\n')){ 
+            System.err.println(cadena[indice]);
+            qe.analisis(cadena, indice);
+        }
+        
         if(indice < cadena.length-1){ // Revisa si no esta en el ultimo caracter 
             if(MapaDeCaracteres.isDigit(cadena[indice])){   //analisis recursivo del numero mientras este sea solo digitos
                 System.out.println("q3: indice =" + indice ); 
@@ -20,13 +26,13 @@ public class q3 {
             }
             else{   //si deja de cumplir con ser solo digitos...
                 if(cadena[indice] == '.' ){ //si el caracter es un punto
-                    indice = indice +1 ;
+                    indice = indice+1;
                     q4.analisis(cadena, indice);
                 }
                 else if(MapaDeCaracteres.isChar(cadena[indice])){ //si el caracter es una letra
                     qe.analisis(cadena, indice);
                 }
-                else if(cadena[indice] == ' '){ //si el caracter es un espacio en blanco
+                else{ 
                     for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
                         valorLexema=valorLexema+cadena[c];
                     }
@@ -43,6 +49,9 @@ public class q3 {
 
                 AnalisisLexico.resultadoAnalisis+="<num,"+valorLexema+">";
                 qf.end();
+            }
+            else if(MapaDeCaracteres.isChar(cadena[indice])){
+                qe.analisis(cadena, indice);
             }
             else qe.analisis(cadena, indice);
         }
