@@ -4,7 +4,7 @@
  */
 package analisislexico;
 
-import analisislexico.MapaDeCaracteres;
+import AnalisisGeneral.TablaDeSimbolos;
 
 /**
  *
@@ -12,24 +12,31 @@ import analisislexico.MapaDeCaracteres;
  */
 public class q6 {
     public static void analisis(char cadena[],int indice){
-        if(indice <= cadena.length-1){
+        String valorLexema="";
+        if(indice < cadena.length-1){
             System.out.println("q6");
             if(MapaDeCaracteres.isDigit(cadena[indice])){
-            indice = indice + 1;
-            q8.analisis(cadena, indice);
+                q8.analisis(cadena, indice+1);
             }
             if(cadena[indice]=='+' || cadena[indice]=='-'){
-                indice= indice+1;
-                q7.analisis(cadena, indice);
-            }
-            
+                q7.analisis(cadena, indice+1);
+            }            
             else{
-            qe.analisis(cadena, indice);
+               qe.analisis(cadena, indice);
             }
         }
-         else { // Si esta en el ultimo caracter, termina el programa 
-                System.out.println("fin programa");
-                System.exit(0);
-}
+        else { // Si esta en el ultimo caracter
+            try{
+                if(MapaDeCaracteres.isDigit(cadena[indice])){
+                    q8.analisis(cadena, indice+1);
+                }
+                else{
+                    qe.analisis(cadena, indice);
+                }
+            }
+            catch(Exception ex){
+                qe.analisis(cadena, indice);
+            }
+        }
     }
 }

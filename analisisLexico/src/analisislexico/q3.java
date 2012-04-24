@@ -29,8 +29,8 @@ public class q3 {
                     indice = indice+1;
                     q4.analisis(cadena, indice);
                 }
-                else if(MapaDeCaracteres.isChar(cadena[indice])){ //si el caracter es una letra
-                    qe.analisis(cadena, indice);
+                else if(cadena[indice]=='E'){ //si el caracter es una letra E
+                    q6.analisis(cadena, indice);
                 }
                 else{ 
                     for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 
