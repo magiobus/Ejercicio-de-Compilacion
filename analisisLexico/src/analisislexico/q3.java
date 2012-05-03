@@ -13,8 +13,8 @@ public class q3 {
     
         String valorLexema="";
         
-            /*si el caracter procesado no es valido*/
-        if(!MapaDeCaracteres.isValid(cadena[indice])&&!(cadena[indice] == ' '||cadena[indice] == '\t'||cadena[indice] == '\n')){ 
+            /* el caracter procesado no es valido*/
+        if(!(MapaDeCaracteres.isValid(cadena[indice])||cadena[indice] == ' '||cadena[indice] == '\t'||cadena[indice] == '\n')){ 
             System.err.println(cadena[indice]);
             qe.analisis(cadena, indice);
         }
