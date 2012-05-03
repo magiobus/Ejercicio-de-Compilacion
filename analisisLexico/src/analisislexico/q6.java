@@ -12,16 +12,17 @@ import AnalisisGeneral.TablaDeSimbolos;
  */
 public class q6 {
     public static void analisis(char cadena[],int indice){
+        System.out.println("q6");
         String valorLexema="";
         if(indice < cadena.length-1){
-            System.out.println("q6");
             if(MapaDeCaracteres.isDigit(cadena[indice])){
-                q8.analisis(cadena, indice+1);
+                q8.analisis(cadena, indice);
             }
             if(cadena[indice]=='+' || cadena[indice]=='-'){
                 q7.analisis(cadena, indice+1);
             }            
             else{
+                System.out.println("asdsafas");
                qe.analisis(cadena, indice);
             }
         }

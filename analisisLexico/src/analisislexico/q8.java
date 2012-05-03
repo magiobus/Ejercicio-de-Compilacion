@@ -5,8 +5,6 @@
 package analisislexico;
 
 import AnalisisGeneral.TablaDeSimbolos;
-import analisislexico.MapaDeCaracteres;
-
 /**
  *
  * @author Gama-Sennin
@@ -37,10 +35,12 @@ public class q8 {
                     qf.end();
                 }
                 else{
+                    System.out.println("asdsafas");
                     qe.analisis(cadena, indice);
                 }
             }
             catch(Exception ex){
+                /*aqui esta el error*/
                 qe.analisis(cadena, indice);
             }
         }
