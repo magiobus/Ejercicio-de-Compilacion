@@ -27,10 +27,10 @@ public class q3 {
             else{   //si deja de cumplir con ser solo digitos...
                 if(cadena[indice] == '.' ){ //si el caracter es un punto
                     indice = indice+1;
-                    q4.analisis(cadena, indice);
+                    q4.analisis(cadena, indice+1);
                 }
                 else if(cadena[indice]=='E'){ //si el caracter es una letra E
-                    q6.analisis(cadena, indice);
+                    q6.analisis(cadena, indice+1);
                 }
                 else{ 
                     for(int c = TablaDeSimbolos.inicioLexema; c<indice;c++){ //lee el valor del lexema procesado y lo asigna a la variable 

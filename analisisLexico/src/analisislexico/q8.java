@@ -15,7 +15,7 @@ public class q8 {
     public static void analisis(char cadena[],int indice){
         String valorLexema="";
         if(indice <= cadena.length-1){
-            System.out.println("q8");
+            System.out.println("q8"+"  "+cadena[indice]);
             if(MapaDeCaracteres.isDigit(cadena[indice])){
                 q8.analisis(cadena, indice+1);
             }
